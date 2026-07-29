@@ -333,7 +333,7 @@ def generate_launch_description():
     ld.add_action(
         IncludeLaunchDescription(
             PythonLaunchDescriptionSource([
-                FindPackageShare('mrs_uav_status'), '/launch/acquisition.launch.py'
+                FindPackageShare('mrs_uav_managers'), '/launch/diagnostics_manager.launch.py'
             ]),
             launch_arguments={
                 'use_sim_time': use_sim_time,
