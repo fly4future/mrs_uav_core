@@ -339,8 +339,9 @@ def generate_launch_description():
                 'use_sim_time': use_sim_time,
                 'custom_config': custom_config,
                 'platform_config': platform_config,
-                'standalone': standalone,
-                'container_name': container_name,
+                # always standalone: DiagnosticsManager must keep running (and reporting) if the
+                # shared uav_core_container crashes, so it cannot share a process with it
+                'standalone': 'true',
             }.items()
         )
     )
